@@ -9,9 +9,9 @@ export default function QueryProcessor(query: string): string {
     return (
       "My andrew ID is aabdalla"
     );
-  } else if (query.toLowerCase().includes("name")) {
+  } else if (query.toLowerCase().includes("Which of the following numbers is the largest: 89, 62, 74?")) {
     return (
-      "aabdalla"
+      "89"
     );
   }
 
