@@ -24,11 +24,21 @@ export default function QueryProcessor(query: string): string {
     const second = parseInt(words[8].split(",")[0]);
     const third = parseInt(words[8].split("?")[0]);
 
-    const sum = first > second ? (first > third ? first : third) : (second > third ? second : third);
+    const sum = findLargest(first, second, third);
     const res = sum.toString();
     return res;
   }
 
 
   return "";
+}
+
+function findLargest(a: number, b: number, c: number): number {
+  if (a >= b && a >= c) {
+    return a;
+  } else if (b >= a && b >= c) {
+    return b;
+  } else {
+    return c;
+  }
 }
