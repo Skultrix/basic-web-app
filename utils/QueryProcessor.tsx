@@ -9,10 +9,24 @@ export default function QueryProcessor(query: string): string {
     return (
       "My andrew ID is aabdalla"
     );
-  } else if (query.toLowerCase().includes("Which of the following numbers is the largest: 89, 62, 74?")) {
-    return (
-      "89"
-    );
+  }
+  else if (query.toLowerCase().includes("plus") ) {
+    const words = query.split(" ");
+    const first = parseInt(words[2]);
+    const second = parseInt(words[4]);
+    const sum = first + second;
+    const res = sum.toString();
+    return res;
+  }
+  else if (query.toLowerCase().includes("largest") ) {
+    const words = query.split(" ");
+    const first = parseInt(words[8].split(",")[0]);
+    const second = parseInt(words[8].split(",")[0]);
+    const third = parseInt(words[8].split("?")[0]);
+
+    const sum = first > second ? (first > third ? first : third) : (second > third ? second : third);
+    const res = sum.toString();
+    return res;
   }
 
 
